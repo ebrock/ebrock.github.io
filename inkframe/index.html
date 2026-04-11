@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<!--
+	InkFrame — Eric Brock
+	Built on Lens by HTML5 UP (html5up.net | @ajlkn)
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>InkFrame</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="InkFrame — A photo browser for Fuji shooters, organized around film recipes." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload-0 is-preload-1 is-preload-2">
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>InkFrame</h1>
+						<p>A photo browser for Fuji shooters, organized around film recipes.</p>
+						<ul class="icons">
+							<li><a href="INKFRAME_APPSTORE_URL" class="icon brands fa-app-store-ios"><span class="label">App Store</span></a></li>
+							<li><a href="https://github.com/ebrock/inkframe" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:EMAIL_ADDRESS" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</header>
+
+				<!-- Thumbnail -->
+					<section id="thumbnails">
+						<article>
+							<a class="thumbnail" href="images/fulls/01.jpg" data-position="center"><img src="images/thumbs/01.jpg" alt="" /></a>
+							<h2>Kodachrome 64</h2>
+							<p>Classic Chrome · Warm reds, golden highlights. An everyday classic.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/02.jpg"><img src="images/thumbs/02.jpg" alt="" /></a>
+							<h2>Tri-X 400</h2>
+							<p>Acros · Gritty monochrome, deep shadow. Built for the streets.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/03.jpg" data-position="top center"><img src="images/thumbs/03.jpg" alt="" /></a>
+							<h2>Portra 400</h2>
+							<p>Classic Neg. · Natural skin tones, faded highlights. Portrait gold.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/04.jpg"><img src="images/thumbs/04.jpg" alt="" /></a>
+							<h2>Cinestill 800T</h2>
+							<p>Eterna Cinema · Tungsten warmth, cinematic halation. Night magic.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/05.jpg" data-position="top center"><img src="images/thumbs/05.jpg" alt="" /></a>
+							<h2>Fujicolor 200</h2>
+							<p>Provia · Clean, neutral everyday color. A reliable starting point.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/06.jpg"><img src="images/thumbs/06.jpg" alt="" /></a>
+							<h2>Velvia Summer</h2>
+							<p>Velvia · Hyper-saturated greens and reds. Landscapes pop.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/07.jpg"><img src="images/thumbs/07.jpg" alt="" /></a>
+							<h2>Ektar 100</h2>
+							<p>Pro Neg. Hi · Fine grain, vivid reds. Sharp and clean.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/08.jpg"><img src="images/thumbs/08.jpg" alt="" /></a>
+							<h2>Colorplus 200</h2>
+							<p>Nostalgic Neg. · Warm, lo-fi, dreamy. Like finding an old roll.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/09.jpg"><img src="images/thumbs/09.jpg" alt="" /></a>
+							<h2>HP5 Push +2</h2>
+							<p>Acros · High contrast, punchy grain. Classic reportage monochrome.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/10.jpg"><img src="images/thumbs/10.jpg" alt="" /></a>
+							<h2>Agfa Vista 200</h2>
+							<p>Pro Neg. Std. · Soft pastels, airy highlights. Relaxed and gentle.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/11.jpg"><img src="images/thumbs/11.jpg" alt="" /></a>
+							<h2>Kodachrome 25</h2>
+							<p>Provia · Fine grain, rich reds, high contrast. A faithful tribute.</p>
+						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/12.jpg"><img src="images/thumbs/12.jpg" alt="" /></a>
+							<h2>Neopan 400</h2>
+							<p>Acros · Classic street monochrome. Deep blacks, sharp edges.</p>
+						</article>
+					</section>
+
+				<!-- What's New -->
+					<section id="whats-new">
+						<h2>What's New</h2>
+						<div id="release-content"><p>Loading latest release&hellip;</p></div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li><a href="../">&larr; Eric Brock</a></li>
+							<li>&copy; Eric Brock.</li>
+							<li>Built on <a href="http://html5up.net">Lens</a> by HTML5 UP.</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				(function() {
+					var el = document.getElementById('release-content');
+					if (!el) return;
+					fetch('/inkframe/releases.json')
+						.then(function(r) { return r.json(); })
+						.then(function(d) {
+							if (!d.tag_name) { el.innerHTML = '<p>No releases yet.</p>'; return; }
+							var date = new Date(d.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+							var lines = (d.body || '').split('\n').filter(function(l) { return l.trim(); });
+							var items = lines
+								.filter(function(l) { return /^[-*]/.test(l.trim()); })
+								.map(function(l) { return '<li>' + l.replace(/^[-*]\s*/, '') + '</li>'; })
+								.join('');
+							el.innerHTML =
+								'<p><strong>' + (d.name || d.tag_name) + '</strong> &mdash; ' + date + '</p>' +
+								(items ? '<ul>' + items + '</ul>' : '');
+						})
+						.catch(function() { el.innerHTML = '<p>Release notes unavailable.</p>'; });
+				})();
+			</script>
+
+	</body>
+</html>

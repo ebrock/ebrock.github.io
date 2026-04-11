@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+	InkLeaf — Eric Brock
+	Built on Paradigm Shift by HTML5 UP (html5up.net | @ajlkn)
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>InkLeaf</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="InkLeaf — A reading journal for the quotes you want to remember." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section class="intro">
+						<header>
+							<h1>InkLeaf</h1>
+							<p>A reading journal for the quotes you want to remember.</p>
+							<ul class="actions">
+								<li><a href="INKLEAF_APPSTORE_URL" class="button primary">Download on the App Store</a></li>
+								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+							</ul>
+						</header>
+						<div class="content">
+							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="InkLeaf app screenshot" /></span>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section id="first">
+						<header>
+							<h2>Capture what stays with you</h2>
+						</header>
+						<div class="content">
+							<p>Reading leaves marks — a line that stops you mid-page, a passage you re-read three times, a sentence that names something you'd felt but never said. <strong>InkLeaf</strong> is where those marks live. Capture quotes as you read, organize them by book and author, and build a library that grows with you.</p>
+							<span class="image main"><img src="images/pic02.jpg" alt="InkLeaf quote capture screen" /></span>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>Everything a reader needs</h2>
+						</header>
+						<div class="content">
+							<p>Designed for the way readers actually work — in stolen moments, at the end of a chapter, or mid-commute with a dog-eared page.</p>
+							<ul class="feature-icons">
+								<li class="icon solid fa-book-open">Capture quotes as you read</li>
+								<li class="icon solid fa-tag">Organize by book and author</li>
+								<li class="icon solid fa-search">Search your entire library</li>
+								<li class="icon solid fa-cloud">iCloud sync across devices</li>
+								<li class="icon solid fa-share-square">Export and share your favorites</li>
+								<li class="icon solid fa-moon">Distraction-free reading mode</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Section — What's New -->
+					<section id="whats-new">
+						<header>
+							<h2>What's New</h2>
+						</header>
+						<div class="content" id="release-content">
+							<p>Loading latest release…</p>
+						</div>
+					</section>
+
+				<!-- Section — Download CTA -->
+					<section>
+						<header>
+							<h2>Get InkLeaf</h2>
+						</header>
+						<div class="content">
+							<p>Available on the App Store. Join the TestFlight beta to try new features early.</p>
+							<ul class="actions">
+								<li><a href="INKLEAF_APPSTORE_URL" class="button primary large">App Store</a></li>
+								<li><a href="INKLEAF_TESTFLIGHT_URL" class="button large">TestFlight Beta</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Copyright -->
+					<div class="copyright">
+						<a href="../">&larr; Eric Brock</a> &nbsp;&bull;&nbsp;
+						&copy; Eric Brock. Built on <a href="https://html5up.net">Paradigm Shift</a>.
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				(function() {
+					var el = document.getElementById('release-content');
+					if (!el) return;
+					fetch('/inkleaf/releases.json')
+						.then(function(r) { return r.json(); })
+						.then(function(d) {
+							if (!d.tag_name) { el.innerHTML = '<p>No releases yet.</p>'; return; }
+							var date = new Date(d.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+							var lines = (d.body || '').split('\n').filter(function(l) { return l.trim(); });
+							var items = lines
+								.filter(function(l) { return /^[-*]/.test(l.trim()); })
+								.map(function(l) { return '<li>' + l.replace(/^[-*]\s*/, '') + '</li>'; })
+								.join('');
+							el.innerHTML =
+								'<p><strong>' + (d.name || d.tag_name) + '</strong> &mdash; ' + date + '</p>' +
+								(items ? '<ul>' + items + '</ul>' : '');
+						})
+						.catch(function() { el.innerHTML = '<p>Release notes unavailable.</p>'; });
+				})();
+			</script>
+
+	</body>
+</html>
