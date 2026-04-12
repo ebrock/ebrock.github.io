@@ -981,6 +981,12 @@ input, select, textarea {
 			margin: 1.25em 0 0 0;
 		}
 
+			.identity #header nav ul {
+				display: flex;
+				justify-content: center;
+				gap: 0.75em;
+			}
+
 			.identity #header nav li {
 				height: 4.25em;
 				line-height: 4.75em;
@@ -1031,6 +1037,62 @@ input, select, textarea {
 			background: rgba(15, 42, 26, 0.75);
 		}
 
+		.app-card--soon {
+			opacity: 0.5;
+			cursor: default;
+		}
+
+		.app-card--soon:hover {
+			transform: none;
+			border-color: rgba(255,255,255,0.15);
+			background: rgba(15, 42, 26, 0.55);
+		}
+
+	.photo-teaser {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5em;
+		margin-top: 1.75em;
+		padding-top: 1.25em;
+		border-top: 1px solid rgba(255,255,255,0.1);
+		color: rgba(255,255,255,0.3);
+		text-align: center;
+	}
+
+	.photo-teaser .icon {
+		font-size: 1.1em;
+	}
+
+	.photo-teaser-label {
+		font-size: 0.75em;
+		font-weight: 900;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: rgba(255,255,255,0.4);
+		margin: 0;
+		line-height: 1;
+	}
+
+	.photo-teaser-sub {
+		font-size: 0.65em;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: rgba(255,255,255,0.22);
+		margin: 0;
+		font-style: italic;
+	}
+
+		.coming-soon-label {
+			display: inline-block;
+			margin-top: 0.4em;
+			font-size: 0.65em;
+			font-weight: 900;
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.45);
+		}
+
 		.app-card img {
 			width: 72px;
 			height: 72px;
@@ -1042,13 +1104,33 @@ input, select, textarea {
 			flex: 1;
 		}
 
+		.app-title-row {
+			display: flex;
+			align-items: center;
+			gap: 0.5em;
+			margin: 0 0 0.4em 0;
+		}
+
 		.app-card h3 {
 			font-size: 0.95em;
 			font-weight: 900;
 			letter-spacing: 0.18em;
 			text-transform: uppercase;
 			color: #fff;
-			margin: 0 0 0.4em 0;
+			margin: 0;
+		}
+
+		.platform-badge {
+			font-size: 0.6em;
+			font-weight: 900;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.55);
+			border: 1px solid rgba(255,255,255,0.25);
+			border-radius: 4px;
+			padding: 0.15em 0.5em;
+			flex-shrink: 0;
+			line-height: 1.6;
 		}
 
 		.app-card p {
