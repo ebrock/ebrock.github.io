@@ -14,16 +14,22 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Fetch InkLeaf latest release
+        env:
+          INKFRAME_INKLEAF_TOKEN: ${{ secrets.INKFRAME_INKLEAF_TOKEN }}
         run: |
           curl -sf \
             -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $INKFRAME_INKLEAF_TOKEN" \
             https://api.github.com/repos/ebrock/inkleaf/releases/latest \
             -o inkleaf/releases.json || echo '{}' > inkleaf/releases.json
 
       - name: Fetch InkFrame latest release
+        env:
+          INKFRAME_INKLEAF_TOKEN: ${{ secrets.INKFRAME_INKLEAF_TOKEN }}
         run: |
           curl -sf \
             -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $INKFRAME_INKLEAF_TOKEN" \
             https://api.github.com/repos/ebrock/inkframe/releases/latest \
             -o inkframe/releases.json || echo '{}' > inkframe/releases.json
 
