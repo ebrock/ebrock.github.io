@@ -3913,3 +3913,27 @@ input, select, textarea {
 .button.primary {
 	color: #efebde !important;
 }
+
+/* Release notes collapsible */
+#release-content details {
+	border-left: 2px solid rgba(58, 80, 70, 0.3);
+	padding-left: 1rem;
+}
+
+#release-content summary {
+	cursor: pointer;
+	list-style: none;
+	user-select: none;
+}
+
+#release-content summary::-webkit-details-marker { display: none; }
+
+#release-content summary::after {
+	content: ' ↓';
+	opacity: 0.4;
+	font-size: 0.85em;
+}
+
+#release-content details[open] summary::after {
+	content: ' ↑';
+}

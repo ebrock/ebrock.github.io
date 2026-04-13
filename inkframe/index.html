@@ -125,8 +125,10 @@
 								.map(function(l) { return '<li>' + l.replace(/^[-*]\s*/, '') + '</li>'; })
 								.join('');
 							el.innerHTML =
-								'<p><strong>' + (d.name || d.tag_name) + '</strong> &mdash; ' + date + '</p>' +
-								(items ? '<ul>' + items + '</ul>' : '');
+								'<details open>' +
+								'<summary><strong>' + (d.name || d.tag_name) + '</strong> &mdash; ' + date + '</summary>' +
+								(items ? '<ul>' + items + '</ul>' : '') +
+								'</details>';
 						})
 						.catch(function() { el.innerHTML = '<p>Release notes unavailable.</p>'; });
 				})();
