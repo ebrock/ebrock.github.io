@@ -1037,17 +1037,6 @@ input, select, textarea {
 			background: rgba(15, 42, 26, 0.75);
 		}
 
-		.app-card--soon {
-			opacity: 0.5;
-			cursor: default;
-		}
-
-		.app-card--soon:hover {
-			transform: none;
-			border-color: rgba(255,255,255,0.15);
-			background: rgba(15, 42, 26, 0.55);
-		}
-
 	.photo-teaser {
 		display: flex;
 		flex-direction: column;
@@ -1083,15 +1072,6 @@ input, select, textarea {
 		font-style: italic;
 	}
 
-		.coming-soon-label {
-			display: inline-block;
-			margin-top: 0.4em;
-			font-size: 0.65em;
-			font-weight: 900;
-			letter-spacing: 0.15em;
-			text-transform: uppercase;
-			color: rgba(255,255,255,0.45);
-		}
 
 		.app-card img {
 			width: 72px;
