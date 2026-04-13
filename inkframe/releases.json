@@ -1,1 +1,44 @@
-{}
+{
+  "url": "https://api.github.com/repos/ebrock/InkFrame/releases/308124131",
+  "assets_url": "https://api.github.com/repos/ebrock/InkFrame/releases/308124131/assets",
+  "upload_url": "https://uploads.github.com/repos/ebrock/InkFrame/releases/308124131/assets{?name,label}",
+  "html_url": "https://github.com/ebrock/InkFrame/releases/tag/v0.1.0-beta",
+  "id": 308124131,
+  "author": {
+    "login": "ebrock",
+    "id": 9874072,
+    "node_id": "MDQ6VXNlcjk4NzQwNzI=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/9874072?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ebrock",
+    "html_url": "https://github.com/ebrock",
+    "followers_url": "https://api.github.com/users/ebrock/followers",
+    "following_url": "https://api.github.com/users/ebrock/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ebrock/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ebrock/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ebrock/subscriptions",
+    "organizations_url": "https://api.github.com/users/ebrock/orgs",
+    "repos_url": "https://api.github.com/users/ebrock/repos",
+    "events_url": "https://api.github.com/users/ebrock/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ebrock/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "node_id": "RE_kwDORoFAMM4SXZnj",
+  "tag_name": "v0.1.0-beta",
+  "target_commitish": "main",
+  "name": "v0.1.0-beta",
+  "draft": false,
+  "immutable": false,
+  "prerelease": false,
+  "created_at": "2026-04-10T12:37:33Z",
+  "updated_at": "2026-04-13T02:03:21Z",
+  "published_at": "2026-04-13T02:03:21Z",
+  "assets": [
+
+  ],
+  "tarball_url": "https://api.github.com/repos/ebrock/InkFrame/tarball/v0.1.0-beta",
+  "zipball_url": "https://api.github.com/repos/ebrock/InkFrame/zipball/v0.1.0-beta",
+  "body": "## Initial Release\r\n\r\n### Export\r\n\r\n  - Photo export with customizable Polaroid-style border, EXIF overlay, film simulation badge, and color palette swatches\r\n  - Straighten slider (±15°) with Vision-powered auto-level; crops to inscribed rectangle to eliminate transparent corners\r\n  - Text overlays include camera/lens, shot settings, film simulation name, and saved recipe name — each independently toggleable via icon buttons\r\n  with hover tooltips\r\n  - Adaptive single-line and multi-line text layouts; portrait and landscape photos size consistently\r\n\r\n###  Recipe Library\r\n\r\n  - Recipe fingerprinting identifies a photo's in-camera recipe from EXIF data\r\n  - Canonical recipes — mark reference recipes and detect near-matches (same film sim, ≤2 field deviations) in the gallery\r\n  - Recipe comparison view shows field-level diffs between a photo's recipe and any saved recipe, with color-coded deviations\r\n  - URL import — paste a FujiXWeekly (or similar) blog URL and InkFrame fetches and pre-fills the recipe editor automatically\r\n  - Text import for manually pasted recipe blocks\r\n  - Manual recipe editor with full field support; normalized on save so all ingest paths produce consistent fingerprints\r\n  - Multi-source recipe sync with named sources; \"Submit to Community\" button for user recipes\r\n\r\n###  Sensor Generation Awareness\r\n\r\n  - Recipes track target sensor generation (X-Trans II–V, GFX, Bayer)\r\n  - Editor adapts available film simulations and settings per generation (Clarity, Grain, Color Chrome appear only when supported)\r\n  - Sensor auto-detected from EXIF camera model and imported page titles\r\n  - Highlight/Shadow tone dials support 0.5-step increments\r\n\r\n###  Gallery & Navigation\r\n\r\n  - Streaming folder scan — gallery renders incrementally as photos are discovered\r\n  - Sidebar with collapsible date groups, arrow key navigation, and a \"load more\" button for large folders\r\n  - Filter pills grouped by semantic recipe identity (exact match, near-match, or film sim) — no duplicate labels\r\n  - Auto-scan recipes on folder open with a cancel button\r\n  - Adaptive detail layout: side-by-side photo + metadata panel at wide widths\r\n\r\n###  Performance\r\n\r\n  - Thumbnail cache overhaul — fixed memory leak where full-res RAF previews were cached at full size (was quietly consuming 12+ GB); now\r\n  constrained to display size with a 200 MB cost limit\r\n  - Shared CGImageSource reduces file I/O from 3 opens to 1 per photo\r\n  - Persistent disk cache for thumbnails and EXIF data\r\n  - Parallel image loading with direction-aware prefetch capped at 1280px\r\n  - NSCache-backed recipe storage with memory-pressure eviction\r\n\r\n###  Polish\r\n\r\n  - App icon\r\n  - Blue checkmark seal SF Symbol for canonical recipe badge\r\n  - Color palette extracted once at thumbnail load time (not on every render)\r\n  - Film simulation names normalized across EXIF, blog parser, and on-disk recipes for reliable matching\r\n\r\n**Full Changelog**: https://github.com/ebrock/InkFrame/commits/v0.1.0-beta"
+}
