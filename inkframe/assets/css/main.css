@@ -3983,12 +3983,16 @@ input, select, textarea {
 
 #release-content summary::-webkit-details-marker { display: none; }
 
-#release-content summary::after {
-	content: ' ↓';
-	opacity: 0.4;
-	font-size: 0.85em;
+#release-content summary::before {
+	content: '›';
+	display: inline-block;
+	margin-right: 0.5em;
+	opacity: 0.5;
+	font-size: 1.1em;
+	transition: transform 0.2s ease;
+	transform: rotate(0deg);
 }
 
-#release-content details[open] summary::after {
-	content: ' ↑';
+#release-content details[open] summary::before {
+	transform: rotate(90deg);
 }

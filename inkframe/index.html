@@ -125,7 +125,7 @@
 								.map(function(l) { return '<li>' + l.replace(/^[-*]\s*/, '') + '</li>'; })
 								.join('');
 							el.innerHTML =
-								'<details open>' +
+								'<details>' +
 								'<summary><strong>' + (d.name || d.tag_name) + '</strong> &mdash; ' + date + '</summary>' +
 								(items ? '<ul>' + items + '</ul>' : '') +
 								'</details>';
