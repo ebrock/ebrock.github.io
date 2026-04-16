@@ -1037,40 +1037,6 @@ input, select, textarea {
 			background: rgba(15, 42, 26, 0.75);
 		}
 
-	.photo-teaser {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.5em;
-		margin-top: 1.75em;
-		padding-top: 1.25em;
-		border-top: 1px solid rgba(255,255,255,0.1);
-		color: rgba(255,255,255,0.3);
-		text-align: center;
-	}
-
-	.photo-teaser .icon {
-		font-size: 1.1em;
-	}
-
-	.photo-teaser-label {
-		font-size: 0.75em;
-		font-weight: 900;
-		letter-spacing: 0.18em;
-		text-transform: uppercase;
-		color: rgba(255,255,255,0.4);
-		margin: 0;
-		line-height: 1;
-	}
-
-	.photo-teaser-sub {
-		font-size: 0.65em;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: rgba(255,255,255,0.22);
-		margin: 0;
-		font-style: italic;
-	}
 
 
 		.app-card img {
@@ -1078,6 +1044,17 @@ input, select, textarea {
 			height: 72px;
 			border-radius: 14px;
 			flex-shrink: 0;
+		}
+
+		.app-card-icon {
+			width: 72px;
+			height: 72px;
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.1em;
+			color: rgba(255,255,255,0.3);
 		}
 
 		.app-card .app-text {
@@ -1165,7 +1142,8 @@ input, select, textarea {
 			font-size: 2.5em;
 		}
 
-		.app-card img {
+		.app-card img,
+		.app-card-icon {
 			width: 56px;
 			height: 56px;
 		}
