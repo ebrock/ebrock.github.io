@@ -3382,7 +3382,7 @@ input, select, textarea {
 			}
 
 		#wrapper .copyright {
-			color: rgba(0, 0, 0, 0.25);
+			color: #e0e0e0;
 			font-size: 1rem;
 			left: 50vw;
 			position: relative;
@@ -3914,9 +3914,9 @@ input, select, textarea {
 }
 
 
-/* ── InkFrame landscape screenshot treatment ── */
+/* ── InkFrame screenshot treatment ── */
 
-/* Hero: float the screenshot inside the panel with breathing room */
+/* Hero: center the screenshot inside the panel with breathing room */
 #wrapper > section.intro > .content {
 	display: flex;
 	align-items: center;
@@ -3936,6 +3936,7 @@ input, select, textarea {
 	position: relative;
 	height: auto;
 	width: 100%;
+	max-height: 70vh; /* prevent portrait hero from being too tall on desktop */
 	top: auto;
 	left: auto;
 	object-fit: contain;
@@ -3967,6 +3968,16 @@ input, select, textarea {
 	width: 50%;
 	border-radius: 8px;
 	box-shadow: 0 6px 32px rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 736px) {
+	.image-pair {
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.image-pair img {
+		width: 100%;
+	}
 }
 
 /* Release notes collapsible */
