@@ -451,12 +451,12 @@ input, select, textarea {
 
 		#header p {
 			font-size: 1.25em;
-			margin: 0.75em 0 0.25em 0;
+			margin: 0.75em 0 0 0;
 			opacity: 0.75;
 		}
 
 		#header nav {
-			margin: 1.5em 0 0 0;
+			margin: 0.75em 0 0 0;
 		}
 
 			#header nav li {
@@ -1096,6 +1096,13 @@ input, select, textarea {
 			color: rgba(255,255,255,0.78);
 			margin: 0;
 		}
+
+	.tagline-sub {
+		font-size: 0.85em;
+		color: rgba(255,255,255,0.6);
+		letter-spacing: 0.05em;
+		margin: 0.2em 0 0;
+	}
 
 /* Footer */
 
