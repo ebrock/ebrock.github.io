@@ -51,13 +51,14 @@
 						<div class="content">
 							<p>Not a filter. Not a preset. A recipe is a system — and InkFrame treats it like one.</p>
 							<ul class="feature-icons">
-								<li class="icon solid fa-fingerprint">Fingerprinted recipes</li>
-								<li class="icon solid fa-th">Group and filter photos by recipe</li>
-								<li class="icon solid fa-link">Import recipes by pasting a URL</li>
-								<li class="icon solid fa-columns">Compare recipes with smart near-match detection</li>
-								<li class="icon solid fa-cloud-download-alt">Sync from community sources</li>
-								<li class="icon solid fa-camera">Sensor generation awareness</li>
+								<li class="icon solid fa-fingerprint" data-detail="Each recipe is fingerprinted on EXIF data — so InkFrame knows exactly which recipe a shot was taken with, even if you've renamed it or imported it from another source.">Fingerprinted recipes</li>
+								<li class="icon solid fa-columns" data-detail="If you are using a slightly tweaked recipe, InkFrame can detect it. Near-match detection surfaces photos that were shot with a close variant, so nothing slips through the cracks.">Near-match smart detection</li>
+								<li class="icon solid fa-th" data-detail="Browse your library grouped by recipe, or filter down to a single one. See at a glance how many shots you have for each look.">Group &amp; filter by recipe</li>
+								<li class="icon solid fa-link" data-detail="Paste a URL from FujiXWeekly or any community recipe source and InkFrame imports the recipe settings automatically — no manual entry.">Import recipes via URL</li>
+								<li class="icon solid fa-cloud-download-alt" data-detail="Stay current with community recipe sources. InkFrame can sync directly from supported sources so your library grows with the community.">Sync from community sources</li>
+								<li class="icon solid fa-camera" data-detail="Recipes are tied to specific Fujifilm sensor generations. InkFrame knows which X-Trans and Bayer generations support each film simulation, so your library stays accurate.">Sensor generation awareness</li>
 							</ul>
+							<div id="feature-detail"></div>
 							<span class="image main"><img src="images/recipes.jpg" alt="InkFrame recipes" /></span>
 						</div>
 					</section>
@@ -141,6 +142,28 @@
 						.catch(function() { el.innerHTML = '<p>Release notes unavailable.</p>'; });
 				})();
 			</script>
+
+		<script>
+			(function() {
+				var items = document.querySelectorAll('.feature-icons li[data-detail]');
+				var panel = document.getElementById('feature-detail');
+				if (!items.length || !panel) return;
+				items.forEach(function(li) {
+					li.addEventListener('click', function() {
+						var isActive = li.classList.contains('active');
+						items.forEach(function(el) { el.classList.remove('active'); });
+						li.closest('.feature-icons').classList.remove('has-active');
+						panel.classList.remove('visible');
+						if (!isActive) {
+							li.classList.add('active');
+							li.closest('.feature-icons').classList.add('has-active');
+							panel.innerHTML = '<p>' + li.dataset.detail + '</p>';
+							panel.classList.add('visible');
+						}
+					});
+				});
+			})();
+		</script>
 
 		<script>
 			(function() {

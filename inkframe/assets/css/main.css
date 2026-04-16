@@ -3980,6 +3980,38 @@ input, select, textarea {
 	}
 }
 
+/* Feature icon detail panel */
+.feature-icons li[data-detail] {
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+}
+.feature-icons.has-active li:not(.active) {
+	opacity: 0.35;
+}
+.feature-icons li.active {
+	opacity: 1 !important;
+}
+#feature-detail {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.3s ease, opacity 0.3s ease;
+	opacity: 0;
+	margin: 0;
+}
+#feature-detail.visible {
+	max-height: 10rem;
+	opacity: 1;
+	margin: 1rem 0 1.5rem;
+}
+#feature-detail p {
+	margin: 0;
+	padding: 0.85rem 1.1rem;
+	border-left: 2px solid rgba(196, 147, 90, 0.5);
+	font-size: 0.9em;
+	line-height: 1.65;
+	color: rgba(255,255,255,0.7);
+}
+
 /* Release notes collapsible */
 #release-content details {
 	border-left: 2px solid rgba(196, 147, 90, 0.3);
