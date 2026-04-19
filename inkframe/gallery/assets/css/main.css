@@ -1388,3 +1388,9 @@ input, select, textarea {
 			margin-bottom: 0.35rem;
 			line-height: 1.5;
 		}
+
+/* Uniform thumbnail aspect ratio */
+#thumbnails article .thumbnail img {
+	height: auto;
+	aspect-ratio: 1 / 1;
+}

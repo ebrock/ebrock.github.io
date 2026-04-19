@@ -80,18 +80,20 @@
 						</header>
 						<div class="content">
 							<p>Export with Polaroid border.  Camera, lens, settings, film simulation name, and color palette swatches composited in.</p>
-							<div class="image-pair">
-							<img src="images/export1.jpg" alt="" />
-							<img src="images/export2.jpg" alt="" />
+							<div class="export-carousel-wrap">
+								<button class="carousel-btn carousel-prev" aria-label="Previous">&#8249;</button>
+								<div class="export-carousel">
+									<img src="images/export1.jpg" alt="" />
+									<img src="images/export2.jpg" alt="" />
+									<img src="images/export3.jpg" alt="" />
+									<img src="images/export4.jpg" alt="" />
+								</div>
+								<button class="carousel-btn carousel-next" aria-label="Next">&#8250;</button>
+							</div>
+							<ul class="actions special">
+								<li><a href="gallery/" class="button primary">View gallery</a></li>
+							</ul>
 						</div>
-							<div class="image-pair">
-							<img src="images/export3.jpg" alt="" />
-							<img src="images/export4.jpg" alt="" />
-						</div>
-						<ul class="actions">
-							<li><a href="gallery/" class="button primary">View gallery</a></li>
-						</ul>
-					</div>
 					</section>
 
 				<!-- Section — What's New -->
@@ -198,7 +200,7 @@
 				overlay.appendChild(img);
 				document.body.appendChild(overlay);
 
-				document.querySelectorAll('.image.main img, .image-pair img').forEach(function(el) {
+				document.querySelectorAll('.image.main img, .export-carousel img').forEach(function(el) {
 					el.style.cursor = 'zoom-in';
 					el.addEventListener('click', function(e) {
 						e.stopPropagation();
@@ -213,6 +215,19 @@
 
 				document.addEventListener('keydown', function(e) {
 					if (e.key === 'Escape') overlay.style.display = 'none';
+				});
+			})();
+		</script>
+
+		<script>
+			(function() {
+				var carousel = document.querySelector('.export-carousel');
+				if (!carousel) return;
+				document.querySelector('.carousel-prev').addEventListener('click', function() {
+					carousel.scrollBy({ left: -carousel.offsetWidth * 0.6, behavior: 'smooth' });
+				});
+				document.querySelector('.carousel-next').addEventListener('click', function() {
+					carousel.scrollBy({ left: carousel.offsetWidth * 0.6, behavior: 'smooth' });
 				});
 			})();
 		</script>
