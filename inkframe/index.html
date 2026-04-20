@@ -112,7 +112,18 @@
 							<h2>Get InkFrame</h2>
 						</header>
 						<div class="content">
-							<p>Coming soon.</p>
+							<p>InkFrame is in beta. Sign up and I'll let you know when access is available.</p>
+							<form action="https://formspree.io/f/xdaydggn" method="POST" id="beta-form">
+								<div class="fields">
+									<div class="field">
+										<input type="email" name="email" id="email" placeholder="your@email.com" required style="color:#111;" />
+									</div>
+								</div>
+								<ul class="actions">
+									<li><button type="submit" class="button primary">Sign up for beta access</button></li>
+								</ul>
+								<p id="beta-form-msg" style="display:none;margin-top:1rem;"></p>
+							</form>
 						</div>
 					</section>
 
@@ -185,6 +196,35 @@
 								}
 							}
 						}
+					});
+				});
+			})();
+		</script>
+
+		<script>
+			(function() {
+				var form = document.getElementById('beta-form');
+				var msg = document.getElementById('beta-form-msg');
+				if (!form) return;
+				form.addEventListener('submit', function(e) {
+					e.preventDefault();
+					fetch(form.action, {
+						method: 'POST',
+						body: new FormData(form),
+						headers: { 'Accept': 'application/json' }
+					}).then(function(r) {
+						if (r.ok) {
+							form.reset();
+							msg.textContent = "You're on the list — I'll be in touch.";
+							msg.style.display = '';
+							form.querySelector('button').disabled = true;
+						} else {
+							msg.textContent = 'Something went wrong. Try again or email me directly.';
+							msg.style.display = '';
+						}
+					}).catch(function() {
+						msg.textContent = 'Something went wrong. Try again or email me directly.';
+						msg.style.display = '';
 					});
 				});
 			})();
