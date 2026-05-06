@@ -1,0 +1,8 @@
+<article>
+	<a class="thumbnail"
+	   href="{{ include.images_root }}/fulls/{{ include.photo.file }}"
+	   {% if include.photo.position %}data-position="{{ include.photo.position }}"{% endif %}
+	   {% if include.photo.inkframe %}data-inkframe="true"{% endif %}><img src="{{ include.images_root }}/fulls/{{ include.photo.file }}" alt="" /></a>
+	<h2>{{ include.photo.title }}</h2>
+	<p>{{ include.photo.caption }}</p>
+</article>

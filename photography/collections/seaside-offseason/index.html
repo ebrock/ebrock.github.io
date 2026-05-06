@@ -1,0 +1,23 @@
+---
+layout: lens
+title: "Seaside Offseason — Eric Brock"
+description: "Seaside Offseason — Photos by Eric Brock."
+assets_root: /photography
+footer_back_href: "../../"
+footer_back_label: "← All Photos"
+---
+
+<!-- Header -->
+				<header id="header">
+					<h1>Seaside Offseason</h1>
+					<p>The coast in the quiet months.</p>
+					<p><a href="../../">&larr; All Photos</a></p>
+				</header>
+
+			<!-- Thumbnails -->
+				<section id="thumbnails">
+					{% assign photos = site.data.collections["seaside-offseason"] %}
+					{% for photo in photos %}
+					{% include lens-photo-article.html photo=photo images_root="/photography/images" %}
+					{% endfor %}
+				</section>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<!--
+	Built on Lens by HTML5 UP (html5up.net | @ajlkn)
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{ page.title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
+		<link rel="icon" href="{{ page.assets_root }}/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="{{ page.assets_root }}/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="{{ page.assets_root }}/assets/css/noscript.css" /></noscript>
+		{% if page.extra_css %}<link rel="stylesheet" href="{{ page.extra_css }}" />{% endif %}
+	</head>
+	<body class="is-preload-0 is-preload-1 is-preload-2">
+
+		<!-- Main -->
+			<div id="main">
+
+				{{ content }}
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							{% if page.footer_back_href %}<li><a href="{{ page.footer_back_href }}">{{ page.footer_back_label }}</a></li>{% endif %}
+							<li>&copy; Eric Brock.</li>
+							<li>Built on <a href="http://html5up.net">Lens</a> by HTML5 UP.</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ page.assets_root }}/assets/js/jquery.min.js"></script>
+			<script src="{{ page.assets_root }}/assets/js/browser.min.js"></script>
+			<script src="{{ page.assets_root }}/assets/js/breakpoints.min.js"></script>
+			<script src="{{ page.assets_root }}/assets/js/main.js"></script>
+
+	</body>
+</html>

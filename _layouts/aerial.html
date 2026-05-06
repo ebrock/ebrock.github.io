@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<!--
+	Eric Brock — personal site
+	Built on Aerial by HTML5 UP (html5up.net | @ajlkn)
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{ page.title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="{{ page.description }}" />
+		{% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}" />{% endif %}
+		<link rel="icon" type="{{ page.favicon_type | default: 'image/png' }}" href="{{ page.favicon }}" />
+		{% if page.og_title %}
+		<!-- Open Graph -->
+		<meta property="og:title" content="{{ page.og_title }}" />
+		<meta property="og:description" content="{{ page.og_description }}" />
+		<meta property="og:image" content="{{ page.og_image }}" />
+		<meta property="og:url" content="{{ page.og_url }}" />
+		<meta property="og:type" content="{{ page.og_type | default: 'website' }}" />
+		<!-- Twitter/X Card -->
+		<meta name="twitter:card" content="{{ page.twitter_card | default: 'summary' }}" />
+		<meta name="twitter:title" content="{{ page.og_title }}" />
+		<meta name="twitter:description" content="{{ page.og_description }}" />
+		<meta name="twitter:image" content="{{ page.og_image }}" />
+		{% endif %}
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+				{{ content }}
+			</div>
+			<footer id="footer">
+				<span class="copyright">&copy; Eric Brock. Built on <a href="http://html5up.net">Aerial</a>.</span>
+			</footer>
+		</div>
+		<script>
+			window.addEventListener('load', function() {
+				document.body.classList.remove('is-preload');
+			});
+		</script>
+	</body>
+</html>

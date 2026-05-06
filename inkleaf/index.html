@@ -1,19 +1,9 @@
-<!DOCTYPE HTML>
-<!--
-	InkLeaf — Eric Brock
-	Built on Paradigm Shift by HTML5 UP (html5up.net | @ajlkn)
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>InkLeaf</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="InkLeaf — A reading journal for the quotes you want to remember." />
-		<link rel="icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+---
+layout: paradigm-shift
+title: InkLeaf
+description: "InkLeaf — A reading journal for the quotes you want to remember."
+assets_root: /inkleaf
+---
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -80,7 +70,7 @@
 						<div class="content">
 							<p>Join the TestFlight beta today.</p>
 							<ul class="actions">
-              <!-- <li><a href="INKLEAF_APPSTORE_URL" class="button primary large">App Store</a></li> --!>
+                <!-- <li><a href="INKLEAF_APPSTORE_URL" class="button primary large">App Store</a></li> --!>
 								<li><a href="https://testflight.apple.com/join/F8JHA4kh" class="button large">TestFlight Beta</a></li>
 							</ul>
 						</div>
@@ -94,36 +84,26 @@
 
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-				(function() {
-					var el = document.getElementById('release-content');
-					if (!el) return;
-					fetch('/inkleaf/releases.json')
-						.then(function(r) { return r.json(); })
-						.then(function(d) {
-							if (!d.tag_name) { el.innerHTML = '<p>No releases yet.</p>'; return; }
-							var date = new Date(d.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-							var lines = (d.body || '').split('\n').filter(function(l) { return l.trim(); });
-							var items = lines
-								.filter(function(l) { return /^[-*]/.test(l.trim()); })
-								.map(function(l) { return '<li>' + l.replace(/^[-*]\s*/, '') + '</li>'; })
-								.join('');
-							el.innerHTML =
-								'<details>' +
-								'<summary><strong>' + (d.name || d.tag_name) + '</strong> &mdash; ' + date + '</summary>' +
-								(items ? '<ul>' + items + '</ul>' : '') +
-								'</details>';
-						})
-						.catch(function() { el.innerHTML = '<p>Release notes unavailable.</p>'; });
-				})();
-			</script>
-
-	</body>
-</html>
+		<script>
+			(function() {
+				var el = document.getElementById('release-content');
+				if (!el) return;
+				fetch('/inkleaf/releases.json')
+					.then(function(r) { return r.json(); })
+					.then(function(d) {
+						if (!d.tag_name) { el.innerHTML = '<p>No releases yet.</p>'; return; }
+						var date = new Date(d.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+						var lines = (d.body || '').split('\n').filter(function(l) { return l.trim(); });
+						var items = lines
+							.filter(function(l) { return /^[-*]/.test(l.trim()); })
+							.map(function(l) { return '<li>' + l.replace(/^[-*]\s*/, '') + '</li>'; })
+							.join('');
+						el.innerHTML =
+							'<details>' +
+							'<summary><strong>' + (d.name || d.tag_name) + '</strong> &mdash; ' + date + '</summary>' +
+							(items ? '<ul>' + items + '</ul>' : '') +
+							'</details>';
+					})
+					.catch(function() { el.innerHTML = '<p>Release notes unavailable.</p>'; });
+			})();
+		</script>

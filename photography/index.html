@@ -1,96 +1,32 @@
-<!DOCTYPE HTML>
-<!--
-	InkFrame — Eric Brock
-	Built on Lens by HTML5 UP (html5up.net | @ajlkn)
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>InkFrame</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Photos by Eric Brock." />
-		<link rel="icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload-0 is-preload-1 is-preload-2">
+---
+layout: lens
+title: "Photography — Eric Brock"
+description: "Photos by Eric Brock."
+assets_root: /photography
+extra_css: /photography/assets/css/collections.css
+footer_back_href: "../"
+footer_back_label: "← Eric Brock"
+---
 
-		<!-- Main -->
-			<div id="main">
+<!-- Header -->
+				<header id="header">
+					<h1>Photography</h1>
+					<p>I shoot digital on Fujifilm X-E5 and X-T20 and film on a Canonet QL17 GIII.</p>
+					<p><a href="https://ericbrock.net">&larr; ericbrock.net</a></p>
+				</header>
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Photography</h1>
-						<p>I shoot digital on Fujifilm X-E5 and X-T20 and film on a Canonet QL17 GIII.</p>
-						<p><a href="https://ericbrock.net">&larr; ericbrock.net</a></p>
-					</header>
+			<!-- Collections -->
+				<section id="collections">
+					<span class="section-label">Collections</span>
+					{% for collection in site.data.photo_collections %}
+					{% include lens-collection-card.html collection=collection %}
+					{% endfor %}
+				</section>
 
-				<!-- Thumbnail -->
-					<section id="thumbnails">
-						<article>
-							<a class="thumbnail" href="images/fulls/metropolitain.jpg" data-position="center"><img src="images/thumbs/metropolitain.jpg" alt="" /></a>
-							<h2>Metropolitain</h2>
-							<p>Canonet QL17 GIII, Kodak Gold 200</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/orange-tree.JPG"><img src="images/thumbs/orange-tree.JPG" alt="" /></a>
-							<h2>Orange Tree</h2>
-							<p>Fujifilm X-T20</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/the-vessel-2.jpg" data-position="top center"><img src="images/thumbs/the-vessel-2.jpg" alt="" /></a>
-							<h2>The Vessel</h2>
-							<p>Canonet QL17 GIII, Kodak Gold 200</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/the-gardens-at-versailles.JPG"><img src="images/thumbs/the-gardens-at-versailles.JPG" alt="" /></a>
-							<h2>Gardens at Versailles</h2>
-							<p>Fujifilm X-T20</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/louvre.jpg"><img src="images/thumbs/louvre.jpg" alt="" /></a>
-							<h2>Louvre</h2>
-							<p>Canonet QL17 GIII, Kodak Gold 200</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/fiat-in-france.jpg"><img src="images/thumbs/fiat-in-france.jpg" alt="" /></a>
-							<h2>Fiat in France</h2>
-							<p>Canonet QL17 GIII, Kodak Gold 200</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/paris-skateboarding.jpg"><img src="images/thumbs/paris-skateboarding.jpg" alt="" /></a>
-							<h2>Ollie</h2>
-							<p>Canonet QL17 GIII, Kodak Gold 200</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/paris-street-and-biker.jpg"><img src="images/thumbs/paris-street-and-biker.jpg" alt="" /></a>
-							<h2>Paris Street</h2>
-							<p>Canonet QL17 GIII, Kodak Gold 200</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/one-two-three.jpg"><img src="images/thumbs/one-two-three.jpg" alt="" /></a>
-							<h2>One Two Three</h2>
-							<p>Canonet QL17 GIII, Kodak Gold 200</p>
-						</article>
-					</section>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li><a href="../">&larr; Eric Brock</a></li>
-							<li>&copy; Eric Brock.</li>
-							<li>Built on <a href="http://html5up.net">Lens</a> by HTML5 UP.</li>
-						</ul>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+			<!-- All Photos -->
+				<span id="all-photos-label">All Photos</span>
+				<section id="thumbnails">
+					{% for photo in site.data.photos %}
+					{% include lens-photo-article.html photo=photo images_root="/photography/images" %}
+					{% endfor %}
+				</section>

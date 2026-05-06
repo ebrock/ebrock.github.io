@@ -1,0 +1,13 @@
+title: Eric Brock
+url: "https://www.ericbrock.net"
+baseurl: ""
+
+exclude:
+  - README.md
+  - README.txt
+  - LICENSE.txt
+  - "*/LICENSE.txt"
+  - CLAUDE.md
+
+markdown: kramdown
+theme: ~
