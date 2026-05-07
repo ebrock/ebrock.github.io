@@ -1,0 +1,23 @@
+---
+layout: lens
+title: "Favorites — Eric Brock"
+description: "A selection of my favorite shots."
+assets_root: /photography
+footer_back_href: "../../"
+footer_back_label: "← All Collections"
+---
+
+<!-- Header -->
+				<header id="header">
+					<h1>Favorites</h1>
+					<p>A selection of my favorite shots.</p>
+					<p><a href="../../">&larr; All Collections</a></p>
+				</header>
+
+			<!-- Thumbnails -->
+				<section id="thumbnails">
+					{% assign photos = site.data.collections["favorites"] %}
+					{% for photo in photos %}
+					{% include lens-photo-article.html photo=photo images_root="/photography/images" %}
+					{% endfor %}
+				</section>

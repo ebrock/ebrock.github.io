@@ -1,3 +1,9 @@
+- slug: favorites
+  title: Favorites
+  description: A selection of my favorite shots.
+  hero: metropolitain.jpg
+  count: 9
+
 - slug: seaside-offseason
   title: Seaside Offseason
   description: The coast in the quiet months.

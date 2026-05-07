@@ -50,12 +50,17 @@ a.collection-card .collection-meta span {
 	opacity: 0.7;
 	color: #fff;
 }
-#all-photos-label {
-	font-size: 0.65em;
-	font-weight: 700;
-	letter-spacing: 0.2em;
-	text-transform: uppercase;
-	color: #bbb;
-	padding: 0.5em 2.25em 0.75em;
-	display: block;
+/* Collection index layout — hide viewer, center sidebar */
+body { background: #fff !important; }
+#main {
+	position: relative !important;
+	width: 100% !important;
+	max-width: 32em !important;
+	height: auto !important;
+	min-height: 0 !important;
+	left: auto !important;
+	right: auto !important;
+	margin: 0 auto !important;
+	overflow: visible !important;
 }
+#viewer, .nav-next, .nav-previous, .toggle { display: none !important; }
