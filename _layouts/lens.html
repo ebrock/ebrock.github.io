@@ -13,6 +13,24 @@
 		<link rel="stylesheet" href="{{ page.assets_root }}/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="{{ page.assets_root }}/assets/css/noscript.css" /></noscript>
 		{% if page.extra_css %}<link rel="stylesheet" href="{{ page.extra_css }}" />{% endif %}
+		<style>
+			/* Replace X close icon with fullscreen expand icon */
+			#main .toggle,
+			#viewer .inner .toggle {
+				background-image: none !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+			}
+			#main .toggle::before,
+			#viewer .inner .toggle::before {
+				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
+				content: "\f424";
+				font-size: 1.4em;
+				color: rgba(255,255,255,0.6);
+			}
+		</style>
 	</head>
 	<body class="is-preload-0 is-preload-1 is-preload-2">
 
