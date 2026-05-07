@@ -62,5 +62,6 @@ body { background: #fff !important; }
 	right: auto !important;
 	margin: 0 auto !important;
 	overflow: visible !important;
+	text-align: left !important;
 }
 #viewer, .nav-next, .nav-previous, .toggle { display: none !important; }
