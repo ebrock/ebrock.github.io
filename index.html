@@ -1,58 +1,156 @@
----
-layout: aerial
-title: Eric Brock
-description: "Apps for readers and photographers, and occasionally, photographs."
-canonical: "https://www.ericbrock.net"
-favicon: "assets/images/inkleaf.png"
-og_title: "Eric Brock"
-og_description: "Apps for readers and photographers, and occasionally, photographs."
-og_image: "https://www.ericbrock.net/assets/images/inkleaf.png"
-og_url: "https://www.ericbrock.net"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Eric Brock</title>
+	<meta name="description" content="Apps for readers and photographers, and occasionally, photographs.">
+	<link rel="canonical" href="https://ericbrock.net">
+	<link rel="icon" type="image/png" href="assets/images/inkleaf-192.png">
+	<!-- Open Graph -->
+	<meta property="og:title" content="Eric Brock">
+	<meta property="og:description" content="Apps for readers and photographers, and occasionally, photographs.">
+	<meta property="og:image" content="https://ericbrock.net/assets/images/inkleaf.png">
+	<meta property="og:url" content="https://ericbrock.net">
+	<meta property="og:type" content="website">
+	<!-- Twitter/X Card -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Eric Brock">
+	<meta name="twitter:description" content="Apps for readers and photographers, and occasionally, photographs.">
+	<meta name="twitter:image" content="https://ericbrock.net/assets/images/inkleaf.png">
+	<style>
+		:root {
+			--bg: #fbfbf9;
+			--ink: #1a1a18;
+			--muted: #62625c;
+			--line: #e4e4de;
+			--green: #4f7a5e;
+			--measure: 34rem;
+		}
 
-				<div class="identity">
-					<header id="header">
-						<h1>Eric Brock</h1>
-						<p class="tagline">Quality Engineer</p>
-						<p class="tagline-sub">Check out my work experience on <a href="https://www.linkedin.com/in/ericbrock327/">LinkedIn</a>. Here are some side projects I'm working on right now.</p>
-						<nav>
-							<ul>
-								<li><a href="https://www.linkedin.com/in/ericbrock327/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://github.com/ebrock" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="https://blog.ericbrock.net" class="icon solid fa-rss"><span class="label">Blog</span></a></li>
-							</ul>
-						</nav>
-					</header>
-				</div>
+		* { box-sizing: border-box; }
 
-				<div class="apps">
-					<a class="app-card" href="inkleaf/">
-						<img src="assets/images/inkleaf.png" alt="" />
-						<div class="app-text">
-							<div class="app-title-row">
-								<h3>InkLeaf</h3>
-								<span class="platform-badge">iOS</span>
-							</div>
-							<p>A reading journal for the quotes you want to remember.</p>
-						</div>
-					</a>
-					<a class="app-card" href="inkframe/">
-						<img src="assets/images/inkframe.png" alt="" />
-						<div class="app-text">
-							<div class="app-title-row">
-								<h3>InkFrame</h3>
-								<span class="platform-badge">iOS</span>
-							</div>
-							<p>Organize and review your Fujifilm film recipes, and sideload them to your camera.</p>
-						</div>
-					</a>
-					<a class="app-card" href="photography/">
-						<span class="app-card-icon icon solid fa-camera"></span>
-						<div class="app-text">
-							<div class="app-title-row">
-								<h3>Photography</h3>
-							</div>
-							<p>Film and digital, mostly Fujifilm.</p>
-						</div>
-					</a>
-				</div>
+		html { -webkit-text-size-adjust: 100%; }
+
+		body {
+			margin: 0;
+			background: var(--bg);
+			color: var(--ink);
+			font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+			font-size: 1.0625rem;
+			line-height: 1.6;
+		}
+
+		a { color: inherit; }
+		a:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+
+		.page { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+
+		/* Intro */
+		.hero { padding: 5rem 0 3rem; }
+		.hero h1 {
+			margin: 0;
+			font-size: clamp(3.5rem, 13vw, 9rem);
+			font-weight: 700;
+			line-height: 0.95;
+			letter-spacing: -0.045em;
+		}
+		.hero .role { margin: 2rem 0 0; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; }
+		.hero .lede { max-width: var(--measure); margin: 0.5rem 0 0; color: var(--muted); }
+
+		/* Projects */
+		.projects { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+		.projects li { border-bottom: 1px solid var(--line); }
+		.project {
+			display: flex;
+			gap: 1.25rem;
+			align-items: center;
+			padding: 1.5rem 0;
+			text-decoration: none;
+		}
+		.project:hover .name { text-decoration: underline; text-underline-offset: 0.2em; }
+		.project img, .project .glyph {
+			flex: none;
+			width: 4rem;
+			height: 4rem;
+			border-radius: 22%;
+		}
+		.project .glyph {
+			display: grid;
+			place-items: center;
+			background: #eceae4;
+			color: var(--muted);
+		}
+		.project .name { font-size: 1.375rem; font-weight: 650; letter-spacing: -0.02em; }
+		.project .platform { margin-left: 0.5rem; font-size: 0.85rem; font-weight: 500; color: var(--muted); }
+		.project .desc { display: block; max-width: var(--measure); color: var(--muted); line-height: 1.45; }
+
+		/* Elsewhere */
+		.elsewhere { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0; padding: 2.5rem 0 1rem; color: var(--muted); }
+
+		footer { padding: 1rem 0 4rem; color: var(--muted); font-size: 0.95rem; }
+		footer p { margin: 0; }
+
+		@media (min-width: 52rem) {
+			.page { padding: 0 2.5rem; }
+			.hero { padding-top: 7rem; }
+			.projects, .elsewhere { max-width: 44rem; }
+		}
+	</style>
+</head>
+<body>
+	<main class="page">
+
+		<header class="hero">
+			<h1>Eric Brock</h1>
+			<p class="role">Quality Engineer</p>
+			<p class="lede">Check out my work experience on <a href="https://www.linkedin.com/in/ericbrock327/">LinkedIn</a>. Here are some side projects I'm working on right now.</p>
+		</header>
+
+		<ul class="projects">
+			<li>
+				<a class="project" href="inkleaf/">
+					<img src="assets/images/inkleaf-192.png" width="64" height="64" alt="">
+					<span>
+						<span class="name">InkLeaf</span><span class="platform">iOS</span>
+						<span class="desc">A reading journal for the quotes you want to remember.</span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a class="project" href="inkframe/">
+					<img src="assets/images/inkframe-192.png" width="64" height="64" alt="">
+					<span>
+						<span class="name">InkFrame</span><span class="platform">iOS</span>
+						<span class="desc">Organize and review your Fujifilm film recipes, and sideload them to your camera.</span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a class="project" href="photography/">
+					<span class="glyph" aria-hidden="true">
+						<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></svg>
+					</span>
+					<span>
+						<span class="name">Photography</span>
+						<span class="desc">Film and digital, mostly Fujifilm.</span>
+					</span>
+				</a>
+			</li>
+		</ul>
+
+		<nav class="elsewhere" aria-label="Elsewhere">
+			<a href="https://www.linkedin.com/in/ericbrock327/">LinkedIn</a>
+			<a href="https://github.com/ebrock">GitHub</a>
+			<a href="https://blog.ericbrock.net">Blog</a>
+		</nav>
+
+	</main>
+
+	<footer>
+		<div class="page">
+			<p>&copy; Eric Brock</p>
+		</div>
+	</footer>
+</body>
+</html>

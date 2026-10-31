@@ -1,109 +1,141 @@
----
-layout: paradigm-shift
-title: InkLeaf
-description: "InkLeaf — A reading journal for the quotes you want to remember."
-assets_root: /inkleaf
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>InkLeaf</title>
+	<meta name="description" content="InkLeaf is a reading journal for the quotes you want to remember.">
+	<link rel="icon" type="image/png" href="../assets/images/inkleaf-192.png">
+	<style>
+		:root {
+			--bg: #fbfbf9;
+			--ink: #1a1a18;
+			--muted: #62625c;
+			--line: #e4e4de;
+			--green: #4f7a5e;
+			--measure: 34rem;
+		}
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		* { box-sizing: border-box; }
 
-				<!-- Intro -->
-					<section class="intro">
-						<header>
-							<h1>InkLeaf</h1>
-							<p>A reading journal for the quotes you want to remember.</p>
-							<ul class="actions">
-								<li><a href="INKLEAF_APPSTORE_URL" class="button primary">Join the TestFlight beta</a></li>
-								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
-							</ul>
-						</header>
-						<div class="content">
-							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="InkLeaf app screenshot" /></span>
-						</div>
-					</section>
+		html { -webkit-text-size-adjust: 100%; }
 
-				<!-- Section -->
-					<section id="first">
-						<header>
-							<h2>Capture what stays with you</h2>
-						</header>
-						<div class="content">
-							<p>Reading leaves marks — a line that stops you mid-page, a passage you re-read three times, a sentence that names something you'd felt but never said. <strong>InkLeaf</strong> is where those marks live. Capture quotes as you read, organize them by book and author, and build a library that grows with you.</p>
-							<span class="image main"><img src="images/pic02.jpg" alt="InkLeaf quote capture screen" /></span>
-						</div>
-					</section>
+		body {
+			margin: 0;
+			background: var(--bg);
+			color: var(--ink);
+			font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+			font-size: 1.0625rem;
+			line-height: 1.6;
+		}
 
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Everything a reader needs</h2>
-						</header>
-						<div class="content">
-							<p>Designed for the way readers actually work — in stolen moments, at the end of a chapter, or mid-commute with a dog-eared page.</p>
-							<ul class="feature-icons">
-								<li class="icon solid fa-book-open">Capture quotes as you read</li>
-								<li class="icon solid fa-tag">Organize by book and author</li>
-								<li class="icon solid fa-search">Search your entire library</li>
-								<li class="icon solid fa-cloud">iCloud sync across devices</li>
-								<li class="icon solid fa-share-square">Export and share your favorites</li>
-								<li class="icon solid fa-moon">Distraction-free reading mode</li>
-							</ul>
-						</div>
-					</section>
+		a { color: inherit; }
+		a:focus-visible, .beta:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
 
-				<!-- Section — What's New -->
-					<section id="whats-new">
-						<header>
-							<h2>What's New</h2>
-						</header>
-						<div class="content" id="release-content">
-							<p>Loading latest release…</p>
-						</div>
-					</section>
+		.page { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
 
-				<!-- Section — Download CTA -->
-					<section>
-						<header>
-							<h2>Get InkLeaf</h2>
-						</header>
-						<div class="content">
-							<p>Join the TestFlight beta today.</p>
-							<ul class="actions">
-                <!-- <li><a href="INKLEAF_APPSTORE_URL" class="button primary large">App Store</a></li> --!>
-								<li><a href="https://testflight.apple.com/join/F8JHA4kh" class="button large">TestFlight Beta</a></li>
-							</ul>
-						</div>
-					</section>
+		/* Hero */
+		.hero { padding: 5rem 0 2rem; }
+		.hero h1 {
+			margin: 0;
+			font-size: clamp(3.5rem, 13vw, 9rem);
+			font-weight: 700;
+			line-height: 0.95;
+			letter-spacing: -0.045em;
+		}
+		.hero .lede {
+			max-width: var(--measure);
+			margin: 2rem 0 0;
+			font-size: 1.25rem;
+			line-height: 1.5;
+		}
 
-				<!-- Copyright -->
-					<div class="copyright">
-						<a href="../">&larr; Eric Brock</a> &nbsp;&bull;&nbsp;
-						&copy; Eric Brock. Built on <a href="https://html5up.net">Paradigm Shift</a>.
-					</div>
+		.beta {
+			display: inline-block;
+			margin-top: 2rem;
+			padding: 0.8rem 1.5rem;
+			border-radius: 999px;
+			background: var(--green);
+			color: #fff;
+			font-weight: 600;
+			text-decoration: none;
+		}
+		.beta:hover { background: #416a50; }
 
+		.hero-img { display: block; width: 100%; max-width: 46rem; height: auto; margin: 3rem 0 0; border-radius: 1.25rem; }
+
+		/* Sections */
+		.block {
+			display: grid;
+			gap: 2.5rem;
+			padding: 4.5rem 0;
+			border-top: 1px solid var(--line);
+		}
+		.block h2 {
+			margin: 0 0 1rem;
+			font-size: clamp(2rem, 5vw, 3rem);
+			line-height: 1.05;
+			letter-spacing: -0.03em;
+		}
+		.block p { max-width: var(--measure); margin: 0 0 1rem; }
+		.block img { display: block; width: 100%; height: auto; border-radius: 1.25rem; }
+		.block img.tall { max-width: 22rem; }
+
+		.features { max-width: var(--measure); margin: 1.5rem 0 0; padding: 0; list-style: none; }
+		.features li { padding: 0.6rem 0; border-top: 1px solid var(--line); }
+		.features li:last-child { border-bottom: 1px solid var(--line); }
+
+		/* Footer */
+		footer { color: var(--muted); font-size: 0.95rem; }
+		footer .page > div { padding: 3rem 0 4rem; border-top: 1px solid var(--line); }
+		footer p { max-width: var(--measure); margin: 0 0 0.75rem; }
+
+		@media (min-width: 52rem) {
+			.page { padding: 0 2.5rem; }
+			.hero { padding-top: 7rem; }
+			.block { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: start; }
+		}
+	</style>
+</head>
+<body>
+	<main class="page">
+
+		<header class="hero">
+			<h1>InkLeaf</h1>
+			<p class="lede">A reading journal for the quotes you want to remember.</p>
+			<a class="beta" href="https://testflight.apple.com/join/F8JHA4kh" rel="noopener">Join the TestFlight beta</a>
+			<img class="hero-img" src="images/pic02.jpg" width="1600" height="1200" alt="InkLeaf on iPhone: the Browse tab, a list of tags and Stats &amp; Insights">
+		</header>
+
+		<section class="block" aria-labelledby="capture">
+			<div>
+				<h2 id="capture">Capture what stays with you</h2>
+				<p>Reading leaves marks: a line that stops you mid-page, a passage you re-read three times, a sentence that names something you'd felt but never said. InkLeaf is where those marks live. Capture quotes as you read, organize them by book and author, and build a library that grows with you.</p>
 			</div>
+			<img class="tall" src="images/pic01.jpg" width="720" height="1100" loading="lazy" alt="InkLeaf on iPhone: a list of saved quotes with their authors and book titles">
+		</section>
 
-		<script>
-			(function() {
-				var el = document.getElementById('release-content');
-				if (!el) return;
-				fetch('/inkleaf/releases.json')
-					.then(function(r) { return r.json(); })
-					.then(function(d) {
-						if (!d.tag_name) { el.innerHTML = '<p>No releases yet.</p>'; return; }
-						var date = new Date(d.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-						var lines = (d.body || '').split('\n').filter(function(l) { return l.trim(); });
-						var items = lines
-							.filter(function(l) { return /^[-*]/.test(l.trim()); })
-							.map(function(l) { return '<li>' + l.replace(/^[-*]\s*/, '') + '</li>'; })
-							.join('');
-						el.innerHTML =
-							'<details>' +
-							'<summary><strong>' + (d.name || d.tag_name) + '</strong> &mdash; ' + date + '</summary>' +
-							(items ? '<ul>' + items + '</ul>' : '') +
-							'</details>';
-					})
-					.catch(function() { el.innerHTML = '<p>Release notes unavailable.</p>'; });
-			})();
-		</script>
+		<section class="block" aria-labelledby="readers">
+			<div>
+				<h2 id="readers">Everything a reader needs</h2>
+				<p>Designed for the way readers actually work: in stolen moments, at the end of a chapter, or mid-commute with a dog-eared page.</p>
+			</div>
+			<ul class="features">
+				<li>Capture quotes as you read</li>
+				<li>Organize by book and author</li>
+				<li>Search your entire library</li>
+				<li>iCloud sync across devices</li>
+				<li>Export and share your favorites</li>
+				<li>Distraction-free reading mode</li>
+			</ul>
+		</section>
+
+	</main>
+
+	<footer>
+		<div class="page"><div>
+			<p><a href="../">Eric Brock</a></p>
+		</div></div>
+	</footer>
+</body>
+</html>
