@@ -1,290 +1,180 @@
----
-layout: paradigm-shift
-title: InkFrame
-description: "InkFrame — your Fujifilm film simulation recipes on iPhone. Browse and compare recipes, connect your camera and install them to C1–C7, and keep reference photos for each one."
-assets_root: /inkframe
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>InkFrame</title>
+	<meta name="description" content="InkFrame is an iPhone app for organizing and reviewing Fujifilm film simulation recipes, and sending them to your camera over USB.">
+	<style>
+		:root {
+			--bg: #fbfbf9;
+			--ink: #1a1a18;
+			--muted: #62625c;
+			--line: #e4e4de;
+			--green: #4f7a5e;
+			--measure: 34rem;
+		}
 
-		<style>
-			.shots { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 2.5rem 0; }
-			.shots figure { flex: 0 1 240px; margin: 0; }
-			.shots img { display: block; width: 100%; height: auto; border-radius: 4.6% / 2.1%; border: 1px solid rgba(0, 0, 0, 0.15); box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.22); cursor: zoom-in; }
-			.shots figcaption { margin-top: 0.75rem; font-size: 0.8em; line-height: 1.4; opacity: 0.75; text-align: center; }
-			.fine-print { font-size: 0.8em; opacity: 0.7; }
-		</style>
+		* { box-sizing: border-box; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		html { -webkit-text-size-adjust: 100%; }
 
-				<!-- Intro -->
-					<section class="intro">
-						<header>
-							<h1>InkFrame</h1>
-							<p>Your Fujifilm film simulation recipes, in your pocket.</p>
-							<ul class="actions">
-								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
-							</ul>
-						</header>
-						<div class="content">
-							<span class="image fill" data-position="center"><img src="images/hero.jpg" alt="InkFrame on iPhone: the camera slots, recipes and reference photos screens" /></span>
-						</div>
-					</section>
+		body {
+			margin: 0;
+			background: var(--bg);
+			color: var(--ink);
+			font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+			font-size: 1.0625rem;
+			line-height: 1.6;
+		}
 
-				<!-- Section — Recipes -->
-					<section id="first">
-						<header>
-							<h2>Every recipe, at a glance</h2>
-						</header>
-						<div class="content">
-							<p>Fujifilm photographers love recipes: Kodak Gold afternoons, Portra portraits, Pacific Blues beach walks. <strong>InkFrame</strong> keeps them all in one place on your iPhone, with every setting on a single page and no digging through camera menus.</p>
-							<div class="shots">
-								<figure>
-									<img src="images/app-recipes.jpg" alt="The Recipes tab: a grid of recipe cards, each with its own fingerprint" />
-									<figcaption>Your library, sorted and filtered your way.</figcaption>
-								</figure>
-								<figure>
-									<img src="images/app-recipe-sheet.jpg" alt="A recipe sheet with reference photos, settings, conditions and a rating" />
-									<figcaption>Every setting on one page, with your notes and ratings.</figcaption>
-								</figure>
-							</div>
-							<ul class="feature-icons">
-								<li class="icon solid fa-fingerprint" data-detail="Every recipe gets its own fingerprint, drawn from its settings. Two recipes look the same only if they are the same, so you can tell your Kodak Gold from your Pacific Blues at a glance, anywhere in the app." data-row="0">Fingerprinted recipes</li>
-								<li class="icon solid fa-exchange-alt" data-detail="Pick any two recipes and see exactly which settings differ, side by side: film simulation, tones, grain, white balance, all of it." data-row="0">Compare any two</li>
-								<li class="feature-detail-row" data-row="0"></li>
-								<li class="icon solid fa-filter" data-detail="Sort by film simulation, rating or white balance. Filter to your favorites, by grain, or by your own tags. Hide the ones you never use." data-row="1">Sort &amp; filter</li>
-								<li class="icon solid fa-star" data-detail="Rate each recipe, note when it works (golden hour, rain, low light) and tag it however you like." data-row="1">Notes, ratings &amp; conditions</li>
-								<li class="feature-detail-row" data-row="1"></li>
-								<li class="icon solid fa-link" data-detail="Paste a URL from FujiXWeekly or another recipe source and InkFrame imports the settings for you. No manual entry." data-row="2">Import from the web</li>
-								<li class="icon solid fa-cloud" data-detail="Your recipes, notes and ratings sync through iCloud, so they are on every device you use." data-row="2">Synced with iCloud</li>
-								<li class="feature-detail-row" data-row="2"></li>
-							</ul>
-							<div class="shots">
-								<figure>
-									<img src="images/app-recipe-menu.jpg" alt="The long-press menu on a recipe card: favorite, edit, compare, duplicate, color, hide, delete" />
-									<figcaption>Long-press a recipe to edit it, compare it, or make a copy.</figcaption>
-								</figure>
-								<figure>
-									<img src="images/app-compare.jpg" alt="Comparing two recipes, with the differing settings highlighted" />
-									<figcaption>Compare shows exactly what's different.</figcaption>
-								</figure>
-							</div>
-						</div>
-					</section>
+		a { color: inherit; }
+		a:focus-visible, .beta:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
 
-				<!-- Section — Camera -->
-					<section>
-						<header>
-							<h2>Your camera, connected</h2>
-						</header>
-						<div class="content">
-							<p>Plug your Fujifilm into your iPhone over USB-C and <strong>InkFrame</strong> reads what is loaded in C1&ndash;C7. No computer needed. Send a recipe to any slot with one tap.</p>
-							<div class="shots">
-								<figure>
-									<img src="images/app-camera-slots.jpg" alt="The camera screen showing slots C1 to C7 with their recipes" />
-									<figcaption>See what's on your camera, slot by slot.</figcaption>
-								</figure>
-								<figure>
-									<img src="images/app-camera-modified.jpg" alt="A recipe sheet for a modified camera slot, listing what differs from the saved recipe" />
-									<figcaption>Tweaked a recipe on the camera? InkFrame shows what changed.</figcaption>
-								</figure>
-							</div>
-							<ul class="feature-icons">
-								<li class="icon solid fa-plug" data-detail="Pick a recipe from your library and send it to C1 through C7. The settings and the name are written to the camera for you." data-row="0">Install to a slot</li>
-								<li class="icon solid fa-fingerprint" data-detail="A slot that matches a recipe in your library shows that recipe's fingerprint. A slot that has been tweaked is marked Modified, and one that isn't saved is marked Not in library." data-row="0">Know what's really on it</li>
-								<li class="feature-detail-row" data-row="0"></li>
-								<li class="icon solid fa-search" data-detail="Open a modified slot to see which settings differ from the recipe you saved, then keep the tweaked version as a recipe of its own." data-row="1">See what changed</li>
-								<li class="icon solid fa-history" data-detail="With the camera unplugged, InkFrame still shows the last slots it read, so you always know what you left on the camera." data-row="1">Remembers the last slots</li>
-								<li class="feature-detail-row" data-row="1"></li>
-							</ul>
-							<p class="fine-print">Works with Fujifilm X cameras over USB-C. Set the camera's USB mode to USB TETHER SHOOTING FIXED.</p>
-						</div>
-					</section>
+		.page { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
 
-				<!-- Section — Reference photos -->
-					<section>
-						<header>
-							<h2>Photos that show what a recipe does</h2>
-						</header>
-						<div class="content">
-							<p>Attach reference photos to any recipe, so you can see what it looks like before you head out. Open a recipe and flip through its photos, or browse every reference photo in one gallery.</p>
-							<div class="shots">
-								<figure>
-									<img src="images/app-gallery.jpg" alt="The Photos tab: a staggered gallery of reference photos, each labeled with its recipe" />
-									<figcaption>Every reference photo, with its recipe.</figcaption>
-								</figure>
-								<figure>
-									<img src="images/app-shelves.jpg" alt="The Photos tab in the shelves layout: one row of photos per recipe" />
-									<figcaption>Or one shelf per recipe.</figcaption>
-								</figure>
-								<figure>
-									<img src="images/app-add-photos.jpg" alt="The add photos menu on a recipe: Photo Library or NAS / Files" />
-									<figcaption>Add from Photos or from a folder on your NAS.</figcaption>
-								</figure>
-							</div>
-							<ul class="feature-icons">
-								<li class="icon solid fa-th-large" data-detail="A staggered grid of every photo, or one shelf per recipe. Pick the layout you like and InkFrame remembers it." data-row="0">Two ways to browse</li>
-								<li class="icon solid fa-cloud" data-detail="Photos sync through iCloud, and they stay with their recipe even when you edit it." data-row="0">Synced with iCloud</li>
-								<li class="feature-detail-row" data-row="0"></li>
-								<li class="icon solid fa-images" data-detail="Pick photos from your Photos library and add them to a recipe. They are resized and stripped of location data." data-row="1">Add from Photos</li>
-								<li class="icon solid fa-server" data-detail="Browse a folder on your NAS right from the recipe. Folders with an InkFrame manifest show which recipe each photo was shot with, and mark the ones shot with a modified version." data-row="1">Add from your NAS</li>
-								<li class="feature-detail-row" data-row="1"></li>
-							</ul>
-						</div>
-					</section>
+		/* Hero */
+		.hero { padding: 5rem 0 2rem; }
+		.hero h1 {
+			margin: 0;
+			font-size: clamp(3.5rem, 13vw, 9rem);
+			font-weight: 700;
+			line-height: 0.95;
+			letter-spacing: -0.045em;
+		}
+		.hero .lede {
+			max-width: var(--measure);
+			margin: 2rem 0 0;
+			font-size: 1.25rem;
+			line-height: 1.5;
+		}
+		.hero .lede + .lede { margin-top: 1rem; color: var(--muted); font-size: 1.0625rem; }
 
-				<!-- Section — What's New -->
-					<section id="whats-new">
-						<header>
-							<h2>What's New</h2>
-						</header>
-						<div class="content" id="release-content">
-							<p>Loading latest release&hellip;</p>
-						</div>
-					</section>
+		.beta {
+			display: inline-block;
+			margin-top: 2rem;
+			padding: 0.8rem 1.5rem;
+			border-radius: 999px;
+			background: var(--green);
+			color: #fff;
+			font-weight: 600;
+			text-decoration: none;
+		}
+		.beta.is-off {
+			background: transparent;
+			color: var(--muted);
+			border: 1.5px dashed #b9b9b0;
+			cursor: not-allowed;
+		}
+		.beta-note { display: block; margin-top: 0.6rem; font-size: 0.9rem; color: var(--muted); }
 
-				<!-- Section — Download CTA -->
-					<section>
-						<header>
-							<h2>Get InkFrame</h2>
-						</header>
-						<div class="content">
-							<p>InkFrame for iPhone is in beta. Sign up and I'll let you know when access is available.</p>
-							<form action="https://formspree.io/f/xdaydggn" method="POST" id="beta-form">
-								<div class="fields">
-									<div class="field">
-										<input type="email" name="email" id="email" placeholder="your@email.com" required style="color:#111;" />
-									</div>
-								</div>
-								<ul class="actions">
-									<li><button type="submit" class="button primary">Sign up for beta access</button></li>
-								</ul>
-								<p id="beta-form-msg" style="display:none;margin-top:1rem;"></p>
-							</form>
-						</div>
-					</section>
+		/* The hero image has a white background; multiply lets the page color show through. */
+		.hero-img { display: block; width: 100%; max-width: 46rem; height: auto; margin: 3rem 0 0; mix-blend-mode: multiply; }
 
-				<!-- Copyright -->
-					<div class="copyright">
-						<a href="../">&larr; Eric Brock</a> &nbsp;&bull;&nbsp;
-						&copy; Eric Brock. Built on <a href="https://html5up.net">Paradigm Shift</a>.
-					</div>
+		/* Sections */
+		.block {
+			display: grid;
+			gap: 2.5rem;
+			padding: 4.5rem 0;
+			border-top: 1px solid var(--line);
+		}
+		.block h2 {
+			margin: 0 0 1rem;
+			font-size: clamp(2rem, 5vw, 3rem);
+			line-height: 1.05;
+			letter-spacing: -0.03em;
+		}
+		.block p { max-width: var(--measure); margin: 0 0 1rem; }
 
+		.shots { display: flex; gap: 1.25rem; align-items: flex-start; }
+		.shots figure { flex: 1 1 0; min-width: 0; margin: 0; }
+		.shots img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 11% / 5%;
+			border: 1px solid var(--line);
+		}
+		.shots figure:only-child { flex: 0 1 15rem; }
+		.shots figcaption { margin-top: 0.6rem; font-size: 0.9rem; color: var(--muted); line-height: 1.4; }
+
+		.notice {
+			max-width: var(--measure);
+			margin: 1.75rem 0 0;
+			padding: 0.25rem 0 0.25rem 1rem;
+			border-left: 3px solid var(--green);
+		}
+		.notice strong { display: block; }
+
+		.setup { color: var(--muted); font-size: 0.95rem; }
+
+		/* Footer */
+		footer { color: var(--muted); font-size: 0.95rem; }
+		footer .page > div { padding: 3rem 0 4rem; border-top: 1px solid var(--line); }
+		footer p { max-width: var(--measure); margin: 0 0 0.75rem; }
+
+		@media (min-width: 52rem) {
+			.page { padding: 0 2.5rem; }
+			.hero { padding-top: 7rem; }
+			.block { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: start; }
+			.block.flip .shots { order: -1; }
+		}
+	</style>
+</head>
+<body>
+	<main class="page">
+
+		<header class="hero">
+			<h1>InkFrame</h1>
+			<p class="lede">An iPhone app for organizing and reviewing your Fujifilm film simulation recipes, and sending them to your camera.</p>
+			<p class="lede">InkFrame is a personal project, built with a lot of AI help and shared as it is. The vision for this app is guided by me and the code is lightly reviewed. This app is early and narrowly tested. So far it has only been used with an iPhone 17 Pro and a Fujifilm X-E5, so other iPhones and cameras may behave differently.</p>
+			<a class="beta is-off" aria-disabled="true" role="link" tabindex="-1">Get InkFrame Beta</a>
+			<span class="beta-note">The TestFlight beta isn't open yet.</span>
+			<img class="hero-img" src="images/hero.jpg" width="1452" height="1300" alt="InkFrame on iPhone: the camera slots, the recipes grid and the reference photos gallery">
+		</header>
+
+		<section class="block" aria-labelledby="organize">
+			<div>
+				<h2 id="organize">Know every recipe</h2>
+				<p>InkFrame fingerprints each recipe and visually represents it with an <a href="https://en.wikipedia.org/wiki/Identicon">identicon</a>. The fingerprint identifies one exact combination of settings, so the same recipe always looks the same, everywhere.</p>
+				<p>Once a recipe has its fingerprint, add notes, favorite it or hide it. Attach reference photos to see how pictures actually look with it.</p>
 			</div>
+			<div class="shots">
+				<figure>
+					<img src="images/app-recipes.jpg" width="750" height="1631" loading="lazy" alt="The Recipes tab: a grid of recipe cards, each with its fingerprint and a star on favorites">
+					<figcaption>Your library, with favorites and hidden recipes.</figcaption>
+				</figure>
+				<figure>
+					<img src="images/app-recipe-sheet.jpg" width="750" height="1631" loading="lazy" alt="A recipe sheet with a star rating, reference photos, every setting and shooting conditions">
+					<figcaption>One recipe: settings, conditions and reference photos.</figcaption>
+				</figure>
+			</div>
+		</section>
 
-		<script>
-			(function() {
-				var el = document.getElementById('release-content');
-				if (!el) return;
-				fetch('/inkframe/releases.json')
-					.then(function(r) { return r.json(); })
-					.then(function(d) {
-						if (!d.tag_name) { el.innerHTML = '<p>No releases yet.</p>'; return; }
-						var date = new Date(d.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-						var lines = (d.body || '').split('\n').filter(function(l) { return l.trim(); });
-						var items = lines
-							.filter(function(l) { return /^[-*]/.test(l.trim()); })
-							.map(function(l) { return '<li>' + l.replace(/^[-*]\s*/, '') + '</li>'; })
-							.join('');
-						el.innerHTML =
-							'<details>' +
-							'<summary><strong>' + (d.name || d.tag_name) + '</strong> &mdash; ' + date + '</summary>' +
-							(items ? '<ul>' + items + '</ul>' : '') +
-							'</details>';
-					})
-					.catch(function() { el.innerHTML = '<p>Release notes unavailable.</p>'; });
-			})();
-		</script>
+		<section class="block flip" aria-labelledby="sideload">
+			<div>
+				<h2 id="sideload">Stop memorizing settings</h2>
+				<p>InkFrame knows the settings, the image quality and everything else a recipe needs. Pick a recipe and sideload it to a camera slot in a few taps.</p>
+				<p class="setup">Connect your camera over USB-C and set its USB mode to USB TETHER SHOOTING FIXED.</p>
+				<div class="notice">
+					<strong>Sideload at your own risk.</strong>
+					Sideloading is unofficial and not affiliated with Fujifilm. It writes settings directly to your camera, and you use it at your own risk.
+				</div>
+			</div>
+			<div class="shots">
+				<figure>
+					<img src="images/app-camera-slots.jpg" width="750" height="1631" loading="lazy" alt="The camera screen listing slots C1 to C7 and the recipe in each">
+					<figcaption>Your camera's custom slots, and what's in each.</figcaption>
+				</figure>
+			</div>
+		</section>
 
-		<script>
-			// Each feature list opens one detail line at a time. Every list works on its own.
-			(function() {
-				document.querySelectorAll('.feature-icons').forEach(function(list) {
-					var items = list.querySelectorAll('li[data-detail]');
-					var detailRows = list.querySelectorAll('.feature-detail-row');
-					items.forEach(function(li) {
-						li.addEventListener('click', function() {
-							var isActive = li.classList.contains('active');
-							items.forEach(function(el) { el.classList.remove('active'); });
-							detailRows.forEach(function(el) { el.classList.remove('visible'); el.textContent = ''; });
-							var injected = list.querySelector('.feature-detail-injected');
-							if (injected) injected.remove();
-							list.classList.remove('has-active');
-							if (!isActive) {
-								li.classList.add('active');
-								list.classList.add('has-active');
-								if (window.innerWidth <= 736) {
-									var el = document.createElement('li');
-									el.className = 'feature-detail-row feature-detail-injected visible';
-									el.textContent = li.dataset.detail;
-									li.insertAdjacentElement('afterend', el);
-								} else {
-									var detailRow = list.querySelector('.feature-detail-row[data-row="' + li.dataset.row + '"]');
-									if (detailRow) {
-										detailRow.textContent = li.dataset.detail;
-										detailRow.classList.add('visible');
-									}
-								}
-							}
-						});
-					});
-				});
-			})();
-		</script>
+	</main>
 
-		<script>
-			(function() {
-				var form = document.getElementById('beta-form');
-				var msg = document.getElementById('beta-form-msg');
-				if (!form) return;
-				form.addEventListener('submit', function(e) {
-					e.preventDefault();
-					fetch(form.action, {
-						method: 'POST',
-						body: new FormData(form),
-						headers: { 'Accept': 'application/json' }
-					}).then(function(r) {
-						if (r.ok) {
-							form.reset();
-							msg.textContent = "You're on the list — I'll be in touch.";
-							msg.style.display = '';
-							form.querySelector('button').disabled = true;
-						} else {
-							msg.textContent = 'Something went wrong. Try again or email me directly.';
-							msg.style.display = '';
-						}
-					}).catch(function() {
-						msg.textContent = 'Something went wrong. Try again or email me directly.';
-						msg.style.display = '';
-					});
-				});
-			})();
-		</script>
-
-		<script>
-			// Tap a screenshot to see it larger.
-			(function() {
-				var overlay = document.createElement('div');
-				overlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center;padding:2rem;box-sizing:border-box;';
-
-				var img = document.createElement('img');
-				img.style.cssText = 'max-width:100%;max-height:90vh;object-fit:contain;border-radius:24px;box-shadow:0 8px 48px rgba(0,0,0,0.8);';
-				overlay.appendChild(img);
-				document.body.appendChild(overlay);
-
-				document.querySelectorAll('.shots img').forEach(function(el) {
-					el.addEventListener('click', function(e) {
-						e.stopPropagation();
-						img.src = this.src;
-						overlay.style.display = 'flex';
-					});
-				});
-
-				overlay.addEventListener('click', function() {
-					this.style.display = 'none';
-				});
-
-				document.addEventListener('keydown', function(e) {
-					if (e.key === 'Escape') overlay.style.display = 'none';
-				});
-			})();
-		</script>
+	<footer>
+		<div class="page"><div>
+			<p><a href="../">Eric Brock</a></p>
+		</div></div>
+	</footer>
+</body>
+</html>
