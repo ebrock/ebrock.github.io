@@ -81,9 +81,10 @@
 		.block img { display: block; width: 100%; height: auto; border-radius: 1.25rem; }
 		.block img.tall { max-width: 22rem; }
 
-		.features { max-width: var(--measure); margin: 1.5rem 0 0; padding: 0; list-style: none; }
-		.features li { padding: 0.6rem 0; border-top: 1px solid var(--line); }
-		.features li:last-child { border-bottom: 1px solid var(--line); }
+		.shots { display: flex; gap: 1.25rem; align-items: flex-start; }
+		.shots figure { flex: 1 1 0; min-width: 0; margin: 0; }
+		.shots img { border-radius: 1.5rem; }
+		.shots figcaption { margin-top: 0.6rem; font-size: 0.9rem; color: var(--muted); line-height: 1.4; }
 
 		/* Footer */
 		footer { color: var(--muted); font-size: 0.95rem; }
@@ -107,26 +108,48 @@
 			<img class="hero-img" src="images/pic02.jpg" width="1600" height="1200" alt="InkLeaf on iPhone: the Browse tab, a list of tags and Stats &amp; Insights">
 		</header>
 
-		<section class="block" aria-labelledby="capture">
+		<section class="block" aria-labelledby="add">
 			<div>
-				<h2 id="capture">Save passages and quotes</h2>
-				<p>InkLeaf keeps each passage or quote with its author and source. Favorite the ones you want to find again, group them into collections, and search the whole library.</p>
+				<h2 id="add">Add quotes</h2>
+				<p>Take a photo of a printed page, select the text you want, and InkLeaf saves it as an entry.</p>
+				<p>Lock in a book and its author and title are used for every entry from it. Add a note to an entry when you want to remember the context.</p>
 			</div>
-			<img class="tall" src="images/pic01.jpg" width="720" height="1100" loading="lazy" alt="InkLeaf on iPhone: a list of saved quotes with their authors and book titles">
+			<div class="shots">
+				<figure>
+					<img src="images/scan-select.jpg" width="600" height="1226" loading="lazy" alt="The Select Text screen, with the text on the page highlighted and one passage selected">
+					<figcaption>Scan a page and select the text you want.</figcaption>
+				</figure>
+				<figure>
+					<img src="images/scan-save.jpg" width="600" height="563" loading="lazy" alt="The new entry's Citation step, with the scanned passage filled in">
+					<figcaption>Save it as an entry.</figcaption>
+				</figure>
+			</div>
 		</section>
 
-		<section class="block" aria-labelledby="readers">
+		<section class="block" aria-labelledby="tag">
 			<div>
-				<h2 id="readers">Find them again</h2>
-				<p>Browse by author, source or tag, or flip through a collection to rediscover what you saved.</p>
+				<h2 id="tag">Tag them</h2>
+				<p>InkLeaf shows how many entries still need tags. Start the Tag Wizard and go through them one at a time, picking from your existing tags or adding a new one.</p>
 			</div>
-			<ul class="features">
-				<li>Favorite what you want to keep close</li>
-				<li>Group quotes into collections</li>
-				<li>Search your whole library</li>
-				<li>Flip through your collections</li>
-				<li>Sync with iCloud</li>
-			</ul>
+			<div class="shots">
+				<figure>
+					<img src="images/tags.jpg" width="640" height="1309" loading="lazy" alt="The Browse tab's tag list, with a banner saying 127 quotes need tags and a Start button">
+					<figcaption>See what still needs tags.</figcaption>
+				</figure>
+				<figure>
+					<img src="images/wizard.jpg" width="640" height="1275" loading="lazy" alt="The Tag Wizard: a quote with its author and book, a field to add a tag and a set of existing tags">
+					<figcaption>Tag them one at a time.</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<section class="block" aria-labelledby="find">
+			<div>
+				<h2 id="find">Find them again</h2>
+				<p>Search by author, source, tag, entries with notes, or favorites. Group entries into collections.</p>
+				<p>Shuffle to flip through your entries as cards. Everything syncs through iCloud.</p>
+			</div>
+			<img class="tall" src="images/pic01.jpg" width="720" height="1100" loading="lazy" alt="InkLeaf on iPhone: a list of saved quotes with their authors and book titles">
 		</section>
 
 	</main>
