@@ -79,12 +79,34 @@
 		}
 		.block p { max-width: var(--measure); margin: 0 0 1rem; }
 		.block img { display: block; width: 100%; height: auto; border-radius: 1.25rem; }
-		.block img.tall { max-width: 22rem; }
 
 		.shots { display: flex; gap: 1.25rem; align-items: flex-start; }
 		.shots figure { flex: 1 1 0; min-width: 0; margin: 0; }
-		.shots img { border-radius: 1.5rem; }
+		.shots img { border-radius: 1.5rem; border: 1px solid var(--line); }
 		.shots figcaption { margin-top: 0.6rem; font-size: 0.9rem; color: var(--muted); line-height: 1.4; }
+		.shots.three { overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1.25rem; margin-right: -1.25rem; }
+		.shots.three figure { flex: 0 0 62%; scroll-snap-align: start; }
+
+		/* iPhone frame around a screenshot with a 9:41 status bar already painted in */
+		.phone {
+			position: relative;
+			padding: 3.2%;
+			background: #0d0d0f;
+			border-radius: 16% / 7.2%;
+			box-shadow: 0 0 0 1.5px #55565b, 0 0 0 3px #1a1a1c, 0 0.9rem 1.6rem -0.4rem rgba(0, 0, 0, 0.28);
+		}
+		.phone img { display: block; width: 100%; height: auto; border: 0; border-radius: 14% / 6.5%; }
+		.phone::after {
+			content: "";
+			position: absolute;
+			top: 2%;
+			left: 50%;
+			width: 27%;
+			height: 3.4%;
+			transform: translateX(-50%);
+			background: #000;
+			border-radius: 999px;
+		}
 
 		/* Footer */
 		footer { color: var(--muted); font-size: 0.95rem; }
@@ -95,6 +117,9 @@
 			.page { padding: 0 2.5rem; }
 			.hero { padding-top: 7rem; }
 			.block { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: start; }
+			.block.wide { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+			.shots.three { overflow: visible; padding-bottom: 0; margin-right: 0; }
+			.shots.three figure { flex: 1 1 0; }
 		}
 	</style>
 </head>
@@ -108,20 +133,24 @@
 			<img class="hero-img" src="images/pic02.jpg" width="1600" height="1200" alt="InkLeaf on iPhone: the Browse tab, a list of tags and Stats &amp; Insights">
 		</header>
 
-		<section class="block" aria-labelledby="add">
+		<section class="block wide" aria-labelledby="add">
 			<div>
 				<h2 id="add">Add quotes</h2>
 				<p>Take a photo of a printed page, select the text you want, and InkLeaf saves it as an entry.</p>
 				<p>Lock in a book and its author and title are used for every entry from it. Add a note to an entry when you want to remember the context.</p>
 			</div>
-			<div class="shots">
+			<div class="shots three">
 				<figure>
-					<img src="images/scan-select.jpg" width="600" height="1226" loading="lazy" alt="The Select Text screen, with the text on the page highlighted and one passage selected">
-					<figcaption>Scan a page and select the text you want.</figcaption>
+					<div class="phone"><img src="images/scan-select.jpg" width="600" height="1304" loading="lazy" alt="The Select Text screen, with the text on a scanned page highlighted and one passage selected"></div>
+					<figcaption>Scan a page and select the text.</figcaption>
 				</figure>
 				<figure>
-					<img src="images/scan-save.jpg" width="600" height="563" loading="lazy" alt="The new entry's Citation step, with the scanned passage filled in">
-					<figcaption>Save it as an entry.</figcaption>
+					<div class="phone"><img src="images/lock-in.jpg" width="600" height="1304" loading="lazy" alt="The lock-in sheet, listing recent books with a Slide to lock in control"></div>
+					<figcaption>Lock in a book.</figcaption>
+				</figure>
+				<figure>
+					<div class="phone"><img src="images/note.jpg" width="600" height="1304" loading="lazy" alt="The Annotation step of a new entry, with a note field and a set of tags"></div>
+					<figcaption>Add a note and tags.</figcaption>
 				</figure>
 			</div>
 		</section>
@@ -133,23 +162,36 @@
 			</div>
 			<div class="shots">
 				<figure>
-					<img src="images/tags.jpg" width="640" height="1309" loading="lazy" alt="The Browse tab's tag list, with a banner saying 127 quotes need tags and a Start button">
+					<div class="phone"><img src="images/tags.jpg" width="600" height="1305" loading="lazy" alt="The Browse tab's tag list, with a banner saying 127 quotes need tags and a Start button"></div>
 					<figcaption>See what still needs tags.</figcaption>
 				</figure>
 				<figure>
-					<img src="images/wizard.jpg" width="640" height="1275" loading="lazy" alt="The Tag Wizard: a quote with its author and book, a field to add a tag and a set of existing tags">
+					<div class="phone"><img src="images/wizard.jpg" width="600" height="1305" loading="lazy" alt="The Tag Wizard: a quote with its author and book, a field to add a tag and a set of existing tags"></div>
 					<figcaption>Tag them one at a time.</figcaption>
 				</figure>
 			</div>
 		</section>
 
-		<section class="block" aria-labelledby="find">
+		<section class="block wide" aria-labelledby="find">
 			<div>
 				<h2 id="find">Find them again</h2>
 				<p>Search by author, source, tag, entries with notes, or favorites. Group entries into collections.</p>
 				<p>Shuffle to flip through your entries as cards. Everything syncs through iCloud.</p>
 			</div>
-			<img class="tall" src="images/pic01.jpg" width="720" height="1100" loading="lazy" alt="InkLeaf on iPhone: a list of saved quotes with their authors and book titles">
+			<div class="shots three">
+				<figure>
+					<div class="phone"><img src="images/browse.jpg" width="600" height="1304" loading="lazy" alt="The Browse tab: counts of leaves, authors, sources, tags, notes and favorites, with Stats &amp; Insights, Collections, Vocabulary and Shuffle Deck below"></div>
+					<figcaption>Browse by author, source or tag.</figcaption>
+				</figure>
+				<figure>
+					<div class="phone"><img src="images/shuffle.jpg" width="600" height="1304" loading="lazy" alt="The Shuffle Deck: a quote card with its author and book, one of 294"></div>
+					<figcaption>Shuffle through your entries.</figcaption>
+				</figure>
+				<figure>
+					<div class="phone"><img src="images/leaves.jpg" width="600" height="1304" loading="lazy" alt="The Leaves tab: a list of saved quotes with their authors and book titles"></div>
+					<figcaption>Everything you've saved.</figcaption>
+				</figure>
+			</div>
 		</section>
 
 	</main>
